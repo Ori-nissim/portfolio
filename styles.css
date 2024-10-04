@@ -3,10 +3,12 @@ body {
   font-family: "Poppins", sans-serif;
   margin: 0;
   padding: 0;
-  line-height: 1.6;
+  line-height: 1.4;
 }
 html {
   font-size: 1rem; /* or any other base size */
+
+  scroll-behavior: smooth; /* Enable smooth scrolling */
 }
 
 h1,
@@ -17,18 +19,34 @@ p {
 }
 a {
   text-decoration: none;
+  color: #000;
 }
 /* Base styles for larger screens */
 h1 {
-  font-size: 7rem; /* Responsive heading size */
+  font-size: 5rem; /* Responsive heading size */
 }
 
 h2 {
-  font-size: 2.5rem; /* Subheading size */
+  font-size: 2rem; /* Subheading size */
+}
+h3 {
+  font-size: 1.5rem;
+}
+p {
+  font-size: 1.2rem; /* Paragraph size */
+}
+/* Center the text in p tags inside the list items */
+ul {
+  padding-left: 0; /* Remove default padding from ul */
 }
 
-p {
-  font-size: 1.5rem; /* Paragraph size */
+ul li {
+  text-align: left; /* Align the li to the left */
+}
+
+ul li p {
+  text-align: center; /* Center the text in p tags */
+  margin: 0; /* Remove default margin for p tags */
 }
 
 /* Media Query for Tablets (768px and below) */
@@ -41,11 +59,25 @@ p {
   }
 
   h2 {
-    font-size: 2rem; /* Smaller subheading */
+    font-size: 1.5rem; /* Smaller subheading */
+  }
+  h3 {
+    font-size: 1.2rem;
   }
 
   p {
-    font-size: 1.2rem; /* Smaller paragraph */
+    font-size: 1rem; /* Smaller paragraph */
+  }
+
+  .skills-list {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    justify-content: center; /* Center items horizontally */
+    align-items: center; /* Center items vertically */
+    width: 80%; /* Set width */
+    max-width: 400px; /* Limit the maximum width */
+    margin: 0 auto; /* Center the container itself */
+    gap: 15px; /* Space between items */
   }
 
   .hero-content {
@@ -70,9 +102,11 @@ p {
   h2 {
     font-size: 1.5rem; /* Smaller subheading */
   }
-
+  h3 {
+    font-size: 1.2rem;
+  }
   p {
-    font-size: 1.5rem; /* Smaller paragraph */
+    font-size: 1rem; /* Smaller paragraph */
   }
 
   nav ul li {
@@ -96,7 +130,12 @@ p {
 
 /* Animated Gradient for Header */
 #hero {
-  background: linear-gradient(135deg, #1a73e8, #1aff48);
+  background: linear-gradient(
+    135deg,
+    #ed2626,
+    #871ffd,
+    #023a89
+  ); /* Blue to green to orange */
   background-size: 200% 200%; /* Increase the size to allow for animation */
   height: 100vh;
   display: flex;
@@ -107,7 +146,7 @@ p {
   text-align: center;
   position: relative;
   margin: 0;
-  animation: gradientFlow 6s ease infinite; /* Apply animation */
+  animation: gradientFlow 8s ease infinite; /* Apply animation */
 }
 /* Add this animation to your existing CSS */
 @keyframes fadeIn {
@@ -184,21 +223,10 @@ nav ul li a:hover {
   height: 100%;
 }
 
-/* Curved Drip Effect */
-.paint-drip {
-  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 25"><path fill="%23ffffff" d="M0 10 Q 10 20 20 10 Q 30 0 40 10 Q 50 20 60 10 Q 70 0 80 10 Q 90 20 100 10 V25 H0z"/></svg>');
-  background-size: cover;
-  width: 100%;
-  height: 35vh;
-  position: absolute;
-  bottom: -5px;
-  left: 0;
-}
-
 .scroll-indicator {
-  position: absolute;
-  bottom: 30vh;
-  font-size: 24px;
+  position: relative;
+  bottom: 15vh;
+  font-size: 5vh;
   color: #ffffff;
   animation: bounce 2s infinite; /* Simple bounce animation */
 }
@@ -212,11 +240,40 @@ nav ul li a:hover {
     transform: translateY(10px);
   }
 }
+section#about h3,
+p {
+  text-align: left;
+  width: 60%;
+  padding-left: 20%;
+}
 
+section#about ul {
+  padding-left: 0; /* Remove default padding from ul */
+}
+
+section#about ul li {
+  text-align: left; /* Align the li to the left */
+}
+
+section#about ul li p {
+  text-align: left; /* Center the text in p tags */
+  padding-left: 20%;
+  padding-bottom: 20px;
+  margin: 0; /* Remove default margin for p tags */
+}
+.parent-container {
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+}
 /* Projects Grid */
 .project-grid {
+  justify-content: center;
+  align-content: center; /* Vertically center the grid items */
+
+  width: 80%;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 0.7fr));
   gap: 20px;
   padding: 20px;
 }
@@ -225,10 +282,23 @@ nav ul li a:hover {
   background: white;
   padding: 20px;
   border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
   transition: transform 0.3s ease;
+  height: auto; /* Adjust height based on content */
+  overflow: visible; /* Prevents text overflow */
+  box-sizing: border-box; /* Ensures padding is included in the card's size */
 }
 
+.project-card img {
+  width: 100%;
+  height: 50%;
+  border-radius: 20px;
+  object-fit: cover;
+}
+.project-card p {
+  width: 90%;
+  padding: 10px;
+}
 .project-card:hover {
   transform: scale(1.05);
 }
@@ -246,13 +316,152 @@ nav ul li a:hover {
   border-radius: 5px;
 }
 
+/* Contact section styling */
+#contact {
+  background-color: #f9f9f9; /* Light background color */
+  padding: 40px;
+  margin-top: 50px; /* Add margin to separate from the top element */
+  text-align: center;
+}
+
+/* Form container */
+form {
+  max-width: 600px;
+  margin: 0 auto; /* Center the form */
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+/* Form elements */
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 10px;
+  text-align: left; /* Align labels to the left */
+  color: #333;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+input:focus,
+textarea:focus {
+  border-color: #1a73e8; /* Blue border when focused */
+  outline: none; /* Remove default focus outline */
+}
+
+textarea {
+  resize: vertical; /* Allow vertical resizing only */
+  min-height: 150px; /* Ensure textarea is taller */
+}
+
+/* Submit button styling */
+button {
+  background-color: #1a73e8;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  width: 100%; /* Make button take full width */
+}
+
+button:hover {
+  background-color: #1558b0; /* Darker blue on hover */
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  form {
+    padding: 10px;
+  }
+
+  input,
+  textarea {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  button {
+    padding: 10px;
+  }
+}
+
 /* Footer */
 footer {
   text-align: center;
+  padding-top: 40px;
+
   padding: 10px;
 }
 
 .social-icons a {
   margin: 0 10px;
   color: #333;
+}
+
+/* Style the sticky social links */
+.social-links {
+  position: fixed;
+  top: 80%; /* Position in the middle vertically */
+  left: 10px; /* Position on the left side */
+  transform: translateY(-50%); /* Adjust to center vertically */
+  display: flex;
+  flex-direction: column; /* Stack the links vertically */
+  gap: 15px; /* Space between the icons */
+}
+
+.social-links a {
+  font-size: 24px; /* Icon size */
+  color: white;
+
+  padding: 10px;
+  border-radius: 50%; /* Round icon background */
+  width: 40px; /* Icon container size */
+  height: 40px; /* Icon container size */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease;
+  text-decoration: none; /* Remove underline */
+}
+
+#linkedin {
+  background-color: #175ab9;
+}
+
+#github {
+  background-color: black;
+}
+
+#linkedin:hover {
+  background-color: #b3b3b3; /* Darker blue on hover */
+}
+
+#github:hover {
+  background-color: #b3b3b3; /* Darker blue on hover */
+}
+
+/* Adjust for smaller screens */
+@media (max-width: 768px) {
+  .social-links {
+    left: 5px; /* Adjust position on smaller screens */
+  }
+
+  .social-links a {
+    width: 20px;
+    height: 20px;
+    font-size: 20px; /* Smaller icon on smaller screens */
+  }
 }

@@ -444,13 +444,12 @@ footer {
   margin: 0 10px;
   color: #333;
 }
-
 /* Style the sticky social links */
 .social-links {
   position: fixed;
-  top: 80%; /* Position in the middle vertically */
-  left: 10px; /* Position on the left side */
-  transform: translateY(-50%); /* Adjust to center vertically */
+  top: 80%; /* Position vertically near the bottom */
+  right: 10px; /* Align to the right side */
+  transform: translateY(-50%); /* Adjust for vertical centering */
   display: flex;
   flex-direction: column; /* Stack the links vertically */
   gap: 15px; /* Space between the icons */
@@ -459,7 +458,6 @@ footer {
 .social-links a {
   font-size: 24px; /* Icon size */
   color: white;
-
   padding: 10px;
   border-radius: 50%; /* Round icon background */
   width: 40px; /* Icon container size */
@@ -490,12 +488,12 @@ footer {
 /* Adjust for smaller screens */
 @media (max-width: 768px) {
   .social-links {
-    left: 5px; /* Adjust position on smaller screens */
+    right: 5px; /* Adjust position on smaller screens */
   }
 
   .social-links a {
-    width: 20px;
-    height: 20px;
+    width: 30px;
+    height: 30px;
     font-size: 20px; /* Smaller icon on smaller screens */
   }
 }

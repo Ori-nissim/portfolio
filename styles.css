@@ -246,27 +246,34 @@ nav ul li a:hover {
     transform: translateY(10px);
   }
 }
+.about-container {
+  width: 80%;
+  display: flex; /* Ensure it's using flexbox */
+  flex-direction: column; /* Stack items vertically */
+  justify-content: center; /* Center the content horizontally */
+  align-items: center; /* Center the content vertically */
+  max-width: 500px; /* Set a max width for the container */
+  margin: 0 auto; /* Center the container on the page */
+}
+.about-container li {
+  list-style-type: none;
+  text-align: left; /* Align the li to the left */
+}
 section#about h3,
 p {
   text-align: left;
-  width: 60%;
-  padding-left: 20%;
 }
 
 section#about ul {
   padding-left: 0; /* Remove default padding from ul */
 }
 
-section#about ul li {
-  text-align: left; /* Align the li to the left */
-}
-
-section#about ul li p {
+.about-container ul li p {
   text-align: left; /* Center the text in p tags */
-  padding-left: 20%;
   padding-bottom: 20px;
   margin: 0; /* Remove default margin for p tags */
 }
+
 .parent-container {
   display: flex;
   justify-content: center; /* Center horizontally */

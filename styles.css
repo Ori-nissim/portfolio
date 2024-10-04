@@ -1,0 +1,258 @@
+/* General */
+body {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+html {
+  font-size: 1rem; /* or any other base size */
+}
+
+h1,
+h2,
+h3,
+p {
+  text-align: center;
+}
+a {
+  text-decoration: none;
+}
+/* Base styles for larger screens */
+h1 {
+  font-size: 7rem; /* Responsive heading size */
+}
+
+h2 {
+  font-size: 2.5rem; /* Subheading size */
+}
+
+p {
+  font-size: 1.5rem; /* Paragraph size */
+}
+
+/* Media Query for Tablets (768px and below) */
+@media (max-width: 768px) {
+  nav {
+    display: none; /* Hide the navbar */
+  }
+  h1 {
+    font-size: 5rem; /* Smaller heading for tablets */
+  }
+
+  h2 {
+    font-size: 2rem; /* Smaller subheading */
+  }
+
+  p {
+    font-size: 1.2rem; /* Smaller paragraph */
+  }
+
+  .hero-content {
+    padding-top: 40px; /* Adjust padding for mobile */
+  }
+
+  nav ul {
+    flex-direction: column; /* Stack nav items vertically */
+  }
+
+  nav ul li {
+    margin: 5px 0; /* Adjust margin for vertical layout */
+  }
+}
+
+/* Media Query for Mobile Devices (480px and below) */
+@media (max-width: 480px) {
+  h1 {
+    font-size: 4rem; /* Even smaller heading for mobile */
+  }
+
+  h2 {
+    font-size: 1.5rem; /* Smaller subheading */
+  }
+
+  p {
+    font-size: 1.5rem; /* Smaller paragraph */
+  }
+
+  nav ul li {
+    margin: 10px 0; /* Adjust margin for mobile */
+  }
+
+  .scroll-indicator {
+    font-size: 18px; /* Smaller scroll indicator */
+  }
+}
+
+/* Hero content */
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Aligns content to the top */
+  align-items: center;
+  height: 100%;
+  padding-top: 80px; /* Fine-tune spacing from the top */
+}
+
+/* Animated Gradient for Header */
+#hero {
+  background: linear-gradient(135deg, #1a73e8, #1aff48);
+  background-size: 200% 200%; /* Increase the size to allow for animation */
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  text-align: center;
+  position: relative;
+  margin: 0;
+  animation: gradientFlow 6s ease infinite; /* Apply animation */
+}
+/* Add this animation to your existing CSS */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px); /* Move the text up slightly */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0); /* Return to original position */
+  }
+}
+
+/* Apply the animation to the header text */
+.hero-content h1,
+.hero-content h2 {
+  animation: fadeIn 3s ease forwards; /* 1-second duration */
+  opacity: 0; /* Start invisible */
+}
+
+/* Gradient Flow Animation */
+@keyframes gradientFlow {
+  0% {
+    background-position: 0% 50%; /* Start from left */
+  }
+  50% {
+    background-position: 100% 50%; /* Move to right */
+  }
+  100% {
+    background-position: 0% 50%; /* Move back to start */
+  }
+}
+/* Nav Bar */
+nav ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  padding: 10px 0;
+}
+
+/* Stack nav items vertically on mobile */
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column; /* Vertical layout */
+  }
+}
+
+nav ul li {
+  margin: 0 15px;
+}
+
+nav ul li a {
+  color: #444444; /* Text color */
+  font-weight: normal;
+  padding: 10px 20px;
+  background: rgba(255, 255, 255, 0.3); /* White with slight transparency */
+  border-radius: 15px; /* Rounded button */
+  transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.05); /* Subtle shadow */
+}
+
+nav ul li a:hover {
+  background: rgba(255, 255, 255, 0.9); /* Slightly less transparent on hover */
+  transform: translateY(-3px); /* Lift effect on hover */
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.1); /* Stronger shadow on hover */
+  color: #00073f; /* Text color change on hover */
+}
+
+/* Hero content */
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+}
+
+/* Curved Drip Effect */
+.paint-drip {
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 25"><path fill="%23ffffff" d="M0 10 Q 10 20 20 10 Q 30 0 40 10 Q 50 20 60 10 Q 70 0 80 10 Q 90 20 100 10 V25 H0z"/></svg>');
+  background-size: cover;
+  width: 100%;
+  height: 35vh;
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+}
+
+.scroll-indicator {
+  position: absolute;
+  bottom: 30vh;
+  font-size: 24px;
+  color: #ffffff;
+  animation: bounce 2s infinite; /* Simple bounce animation */
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(10px);
+  }
+}
+
+/* Projects Grid */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.project-card {
+  background: white;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.project-card:hover {
+  transform: scale(1.05);
+}
+
+/* Skills section */
+.skills-list {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.skill-item {
+  background: #e1e1e1;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 10px;
+}
+
+.social-icons a {
+  margin: 0 10px;
+  color: #333;
+}

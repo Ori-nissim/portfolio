@@ -1,2 +1,89 @@
 <!DOCTYPE html>
-<h1>hello</h1>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ori Nissim | Software Developer </title>
+    <link rel="stylesheet" href="styles.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+      
+  </head>
+  <body>
+    <header id="hero">
+      <nav>
+        <ul>
+          <li><a href="#hero">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="hero-content">
+        <h1>Ori Nissim</h1>
+        <h2>Turning Ideas into high quality software</h2>
+      </div>
+      <div class="paint-drip"></div>
+      <div class="scroll-indicator">
+        ↓
+      </div>
+      
+    </header>
+
+    <section id="about">
+      <h2>About Me</h2>
+      <p>
+        Hello! I'm Ori, a passionate Software developer specializing in
+        creating beautiful and efficient web experiences.
+      </p>
+    </section>
+
+    <section id="projects">
+      <h2>Projects</h2>
+      <div class="project-grid">
+        <div class="project-card">
+          <img src="project1.png" alt="Project 1" />
+          <h3>Project 1</h3>
+          <p>Description of the project.</p>
+        </div>
+        <div class="project-card">
+          <img src="project2.png" alt="Project 2" />
+          <h3>Project 2</h3>
+          <p>Description of the project.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <h2>Skills</h2>
+      <div class="skills-list">
+        <div class="skill-item">HTML</div>
+        <div class="skill-item">CSS</div>
+        <div class="skill-item">JavaScript</div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Contact Me</h2>
+      <form action="https://formspree.io/f/mexample" method="POST">
+        <label for="name">Your Name:</label>
+        <input type="text" id="name" name="name" required />
+
+        <label for="email">Your Email:</label>
+        <input type="email" id="email" name="email" required />
+
+        <label for="message">Your Message:</label>
+        <textarea id="message" name="message" required></textarea>
+
+        <button type="submit">Send Message</button>
+      </form>
+    </section>
+
+    <footer>
+      <div class="social-icons">
+        <a href="https://github.com/Ori-nissim" target="_blank">GitHub</a>
+        <a href="https://linkedin.com/in/ori-nissim-/" target="_blank">LinkedIn</a>
+      </div>
+    </footer>
+  </body>
+</html>

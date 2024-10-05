@@ -252,7 +252,7 @@ nav ul li a:hover {
   flex-direction: column; /* Stack items vertically */
   justify-content: center; /* Center the content horizontally */
   align-items: center; /* Center the content vertically */
-  max-width: 500px; /* Set a max width for the container */
+  max-width: 60%; /* Set a max width for the container */
   margin: 0 auto; /* Center the container on the page */
 }
 .about-container li {
